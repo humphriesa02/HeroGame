@@ -18,4 +18,5 @@ inputDirection = point_direction(0,0, keyRight-keyLeft, keyDown-keyUp);
 inputMagnitude = (keyRight-keyLeft != 0) or (keyDown-keyUp != 0);
 
 // Execute the current state
-state();
+
+if (!global.gamePaused) state();
