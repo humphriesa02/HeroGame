@@ -1,4 +1,5 @@
 state = PlayerStateFree; // Set the starting state to 'Free'
+lastState = state;
 
 collisionMap = layer_tilemap_get_id(layer_get_id("Coll"))
 
