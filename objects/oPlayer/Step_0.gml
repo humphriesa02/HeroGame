@@ -20,3 +20,5 @@ inputMagnitude = (keyRight-keyLeft != 0) or (keyDown-keyUp != 0);
 // Execute the current state
 
 if (!global.gamePaused) state();
+
+depth = -bbox_bottom
