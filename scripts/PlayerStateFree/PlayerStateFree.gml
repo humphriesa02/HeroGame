@@ -20,26 +20,27 @@ function PlayerStateFree(){
 	// Update Image Index
 	PlayerAnimateSprite();
 
+	// Player roll logic
+	if (keyRoll)
+	{
+		state = PlayerStateRoll;
+		moveDistanceRemaining = distanceRoll;
+	}
+
 	// Activate key logic
 	if (keyActivate)
 	{
 		// 1. Check for an entity to activate
-		var _activateX = lengthdir_x(10, direction);
-		var _activateY = lengthdir_y(10, direction);
+		var _activateX = lengthdir_x(15, direction);
+		var _activateY = lengthdir_y(15, direction);
 		activate = instance_position(x + _activateX, y + _activateY, pEntity);
 		
-		// 2. If there is nothing, or there is something, but it has no script - roll
-		if (activate == noone || activate.entityActivateScript == -1)
-		{
-			state = PlayerStateRoll;
-			moveDistanceRemaining = distanceRoll;
-		}
-		// 3. Otherwise, there is something and it has a script - activate
-		else 
+		// 2. If there is something and it has a script - activate
+		if (activate != noone && activate.entityActivateScript != -1)
 		{
 			ScriptExecuteArray(activate.entityActivateScript, activate.entityActivateArgs);	
 			
-		// 4. If the thing we activate is an NPC, make it face towards us
+		// 3. If the thing we activate is an NPC, make it face towards us
 			if (activate.entityNPC)
 			{
 				with (activate)

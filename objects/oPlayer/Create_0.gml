@@ -15,3 +15,5 @@ spriteRun = sPlayerRun;
 spriteIdle = sPlayer;
 
 localFrame = 0;
+
+skipStepEvent = false;
