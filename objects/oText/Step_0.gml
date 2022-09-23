@@ -13,11 +13,18 @@ var _min = 0;
 if (responseSelected > _max) responseSelected = _min;
 if (responseSelected < _min) responseSelected = _max;
 
-if (keyboard_check_pressed(ord("Z")))
+if (oPlayer.keyActivate)
 {
 	var _messageLength = string_length(message);
 	if (textProgress >= _messageLength)
 	{
+		if (responses[0] != -1)
+		{
+			// Call dialogue responses switch statement with the selected response
+			with (originInstance) DialogueResponses(other.responseScripts[other.responseSelected]);
+			
+		}
+		
 		instance_destroy();
 		if (instance_exists(oTextQueued))
 		{
@@ -26,7 +33,6 @@ if (keyboard_check_pressed(ord("Z")))
 		else
 		{
 			with (oPlayer) state = lastState;
-			skipStepEvent = true;
 		}
 	}
 	else

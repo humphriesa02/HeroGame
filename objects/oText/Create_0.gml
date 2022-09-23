@@ -14,5 +14,4 @@ lerpProgress = 0;
 // number of characters we're going to show in our message
 textProgress = 0;
 
-responses = ["Test response", "Test response two"];
 responseSelected = 0;

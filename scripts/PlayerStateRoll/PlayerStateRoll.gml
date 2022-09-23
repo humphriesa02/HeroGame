@@ -21,10 +21,12 @@ function PlayerStateRoll(){
 	{
 		state = PlayerStateFree;		
 	}
-	
+	// Collide with a wall
 	if(_collided)
 	{
-		state = PlayerStateFree;
+		state = PlayerStateBonk;
+		// How far back we go for the bonk
+		moveDistanceRemaining = distanceBonk;
 		ScreenShake(4, 30);
 	}
 }
