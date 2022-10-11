@@ -26,7 +26,13 @@ function PlayerStateFree(){
 		state = PlayerStateRoll;
 		moveDistanceRemaining = distanceRoll;
 	}
-
+	
+	// Attack key logic
+	if (keyAttack)
+	{
+		state = PlayerStateAttack;
+		stateAttack = AttackSlash;
+	}
 	// Activate key logic
 	if (keyActivate)
 	{

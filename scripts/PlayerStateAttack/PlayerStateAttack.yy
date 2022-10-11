@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "PlayerStateLocked",
+  "name": "PlayerStateAttack",
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
