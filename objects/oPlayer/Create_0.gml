@@ -16,6 +16,8 @@ distanceBonkHeight = 12; // Height you reach on an imaginary z-axis for the bonk
 speedBonk = 1.5; // Speed of bonk
 z = 0;
 
+animationEndScript = -1;
+
 spriteRoll = sPlayerRoll;
 spriteRun = sPlayerRun;
 spriteIdle = sPlayer;

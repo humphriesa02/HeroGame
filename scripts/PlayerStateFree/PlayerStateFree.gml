@@ -40,9 +40,15 @@ function PlayerStateFree(){
 		var _activateX = lengthdir_x(15, direction);
 		var _activateY = lengthdir_y(15, direction);
 		activate = instance_position(x + _activateX, y + _activateY, pEntity);
-		
+		if (activate == noone || activate.entityActivateScript == -1)
+		{
+			if (global.iLifted != noone)
+			{
+				PlayerThrow();
+			}			
+		}
 		// 2. If there is something and it has a script - activate
-		if (activate != noone && activate.entityActivateScript != -1)
+		else
 		{
 			ScriptExecuteArray(activate.entityActivateScript, activate.entityActivateArgs);	
 			
